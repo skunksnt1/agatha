@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sistema de Gestão de Riscos</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="../bower_components/v-accordion/dist/v-accordion.css" />
+    <link rel="stylesheet" href="../bower_components/angular-material-data-table/dist/md-data-table.css" />
+    <link rel="stylesheet" href="../bower_components/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="../bower_components/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="../bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../bower_components/md-steppers/dist/md-steppers.css" />
+    <link rel="stylesheet" href="../bower_components/lf-ng-md-file-input/dist/lf-ng-md-file-input.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp/serve,src}) styles/app.css -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="scripts/app/main.css">
+    <link rel="stylesheet" href="scripts/app/directives/utilitarios/menu.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css"/>
+</head>
+
+<body ng-app="gestaoRiscosApp" layout="column">
+<!--[if lt IE 10]>
+<p class="browsehappy">Você está utilizando um browser <strong>desatualizado</strong>. Por favor, <a href="http://browsehappy.com/">atualize-o</a> para melhorar sua experiência.</p>
+<![endif]-->
+
+<div ng-include="'scripts/pages/geral/view/template.html'" layout="column" flex tabIndex="-1" role="main"></div>
+
+<!-- build:js(src) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.js"></script>
+<script src="../bower_components/angular-cache-buster/angular-cache-buster.js"></script>
+<script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="../bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+<script src="../bower_components/angular-loading-bar/build/loading-bar.js"></script>
+<script src="../bower_components/angular-resource/angular-resource.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/angular-messages/angular-messages.js"></script>
+<script src="../bower_components/angular-material/angular-material.js"></script>
+<script src="../bower_components/json3/lib/json3.js"></script>
+<script src="../bower_components/ng-file-upload/ng-file-upload.js"></script>
+<script src="../bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+<script src="../bower_components/br-validations/releases/br-validations.js"></script>
+<script src="../bower_components/string-mask/src/string-mask.js"></script>
+<script src="../bower_components/angular-input-masks/angular-input-masks-standalone.min.js"></script>
+<script src="../bower_components/br-masks/releases/br-masks.js"></script>
+<script src="../bower_components/angular-br-filters/release/angular-br-filters.min.js"></script>
+<script src="../bower_components/v-accordion/dist/v-accordion.js"></script>
+<script src="../bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="../bower_components/angular-ui-mask/dist/mask.js"></script>
+<script src="../bower_components/angular-material-data-table/dist/md-data-table.js"></script>
+<script src="../bower_components/lodash/lodash.js"></script>
+<script src="../bower_components/validator-js/validator.js"></script>
+<script src="../bower_components/angular-translate/angular-translate.js"></script>
+<script src="../bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+<script src="../bower_components/angular-translate-loader-url/angular-translate-loader-url.js"></script>
+<script src="../bower_components/slick-carousel/slick/slick.min.js"></script>
+<script src="../bower_components/angular-slick/dist/slick.js"></script>
+<script src="../bower_components/tinymce-dist/tinymce.js"></script>
+<script src="../bower_components/angular-ui-tinymce/src/tinymce.js"></script>
+<script src="../bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+<script src="../bower_components/md-steppers/dist/md-steppers.js"></script>
+<script src="../bower_components/ng-csv/build/ng-csv.min.js"></script>
+<script src="../bower_components/pdfmake/build/pdfmake.js"></script>
+<script src="../bower_components/pdfmake/build/vfs_fonts.js"></script>
+<script src="../bower_components/angular-breadcrumb/release/angular-breadcrumb.js"></script>
+<script src="../bower_components/moment/moment.js"></script>
+<script src="../bower_components/lf-ng-md-file-input/dist/lf-ng-md-file-input.js"></script>
+<script src="../bower_components/ngstorage/ngStorage.js"></script>
+<script src="../bower_components/html2canvas/dist/html2canvas.js"></script>
+<script src="../bower_components/angular-mask/dist/ngMask.js"></script>
+<script src="../bower_components/chart.js/dist/Chart.js"></script>
+<script src="../bower_components/angular-chart.js/dist/angular-chart.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+<!-- inject:js -->
+<script src="scripts/app/app.modules.js"></script>
+<script src="scripts/pages/validacao/services/validacao.service.js"></script>
+<script src="scripts/pages/validacao/controller/validacao.controller.js"></script>
+<script src="scripts/pages/taxonomia/services/taxonomia.service.js"></script>
+<script src="scripts/pages/taxonomia/controller/taxonomia.controller.js"></script>
+<script src="scripts/pages/risco-residual/services/risco-residual.service.js"></script>
+<script src="scripts/pages/risco-residual/controller/risco-residual.controller.js"></script>
+<script src="scripts/pages/risco-inerente/services/risco-inerente.service.js"></script>
+<script src="scripts/pages/risco-inerente/controller/risco-inerente.controller.js"></script>
+<script src="scripts/pages/resposta/services/resposta.service.js"></script>
+<script src="scripts/pages/resposta/controller/resposta.controller.js"></script>
+<script src="scripts/pages/processo/services/processo.service.js"></script>
+<script src="scripts/pages/processo/controller/processo.controller.js"></script>
+<script src="scripts/pages/plano-controle/services/plano-controle.service.js"></script>
+<script src="scripts/pages/plano-controle/controller/plano-controle.controller.js"></script>
+<script src="scripts/pages/operacao/services/operacao.service.js"></script>
+<script src="scripts/pages/operacao/controller/operacao.controller.js"></script>
+<script src="scripts/pages/monitoramento/services/monitoramento.service.js"></script>
+<script src="scripts/pages/monitoramento/controller/monitoramento.controller.js"></script>
+<script src="scripts/pages/meus-dados/services/meus-dados.service.js"></script>
+<script src="scripts/pages/meus-dados/controller/meus-dados.controller.js"></script>
+<script src="scripts/pages/mapa-risco/services/mapa-risco2.service.js"></script>
+<script src="scripts/pages/mapa-risco/services/mapa-risco.service.js"></script>
+<script src="scripts/pages/mapa-risco/controller/mapa-risco.controller.js"></script>
+<script src="scripts/pages/macroprocesso/services/macroprocesso.service.js"></script>
+<script src="scripts/pages/macroprocesso/controller/macroprocesso.controller.js"></script>
+<script src="scripts/pages/identificacao/services/identificacao.service.js"></script>
+<script src="scripts/pages/identificacao/controller/identificacao.controller.js"></script>
+<script src="scripts/pages/home/services/home.service.js"></script>
+<script src="scripts/pages/home/controller/home.controller.js"></script>
+<script src="scripts/pages/glossario/services/glossario.service.js"></script>
+<script src="scripts/pages/glossario/controller/glossario.controller.js"></script>
+<script src="scripts/pages/gerenciar-permissoes/services/gerenciar-permissoes.service.js"></script>
+<script src="scripts/pages/gerenciar-permissoes/controller/gerenciar-permissoes.controller.js"></script>
+<script src="scripts/pages/geral/controller/global.controllers.js"></script>
+<script src="scripts/pages/exportar-processo/services/exportar-processo.service.js"></script>
+<script src="scripts/pages/exportar-processo/controller/exportar-processo.controller.js"></script>
+<script src="scripts/pages/evento-risco/services/evento-risco.service.js"></script>
+<script src="scripts/pages/evento-risco/controller/evento-risco.controller.js"></script>
+<script src="scripts/pages/evento/services/evento.service.js"></script>
+<script src="scripts/pages/evento/controller/evento.controller.js"></script>
+<script src="scripts/pages/desenho/services/desenho.service.js"></script>
+<script src="scripts/pages/desenho/controller/desenho.controller.js"></script>
+<script src="scripts/pages/controle-evento/services/controle-evento.service.js"></script>
+<script src="scripts/pages/controle-evento/controller/controle-evento.controller.js"></script>
+<script src="scripts/pages/controle/services/controle.service.js"></script>
+<script src="scripts/pages/controle/controller/controle.controller.js"></script>
+<script src="scripts/pages/consequencia-evento-risco/services/consequencia-evento-risco.service.js"></script>
+<script src="scripts/pages/consequencia-evento-risco/controller/consequencia-evento-risco.controller.js"></script>
+<script src="scripts/pages/causa-evento-risco/services/causa-evento-risco.service.js"></script>
+<script src="scripts/pages/causa-evento-risco/controller/causa-evento-risco.controller.js"></script>
+<script src="scripts/pages/categoria/services/categoria.service.js"></script>
+<script src="scripts/pages/categoria/controller/categoria.controller.js"></script>
+<script src="scripts/pages/calculadora/services/calculadora.service.js"></script>
+<script src="scripts/pages/calculadora/controller/calculadora.controller.js"></script>
+<script src="scripts/pages/avaliacao-risco/services/avaliacao-risco.service.js"></script>
+<script src="scripts/pages/avaliacao-risco/controller/avaliacao-risco.controller.js"></script>
+<script src="scripts/pages/avaliacao/services/avaliacao.service.js"></script>
+<script src="scripts/pages/avaliacao/controller/avaliacao.controller.js"></script>
+<script src="scripts/pages/analise-ambiente/services/analise-ambiente.service.js"></script>
+<script src="scripts/pages/analise-ambiente/controller/analise-ambiente.controller.js"></script>
+<script src="scripts/pages/agrupamento-taxonomia/services/agrupamento-taxonomia.service.js"></script>
+<script src="scripts/pages/agrupamento-taxonomia/controller/agrupamento-taxonomia.controller.js"></script>
+<script src="scripts/pages/acompanhamento/services/acompanhamento.service.js"></script>
+<script src="scripts/pages/acompanhamento/controller/acompanhamento.controller.js"></script>
+<script src="scripts/app/directives/utilitarios/menu.js"></script>
+<script src="scripts/app/directives/utilitarios/htmlToPd.min.js"></script>
+<script src="scripts/app/directives/monitoramento-risco/monitoramento.risco.js"></script>
+<script src="scripts/app/services/usuarioService.js"></script>
+<script src="scripts/app/services/traducoes.factory.js"></script>
+<script src="scripts/app/services/orgao.service.js"></script>
+<script src="scripts/app/services/escopoCompartilhadoService.js"></script>
+<script src="scripts/app/services/comumService.js"></script>
+<script src="scripts/app/interceptors/success.interceptor.js"></script>
+<script src="scripts/app/interceptors/error.interceptor.js"></script>
+<script src="scripts/app/interceptors/auth.interceptor.js"></script>
+<script src="scripts/app/interceptors/alert.interceptor.js"></script>
+<script src="scripts/app/filters/filters.js"></script>
+<script src="scripts/app/directives/treevieworgao.js"></script>
+<script src="scripts/app/directives/ngEnter.js"></script>
+<script src="scripts/app/directives/glossario.js"></script>
+<script src="scripts/app/directives/datepicker.js"></script>
+<script src="scripts/app/directives/breadCrumb.js"></script>
+<script src="scripts/custom-directives/md-data-table.js"></script>
+<script src="scripts/app/app.run.js"></script>
+<script src="scripts/app/app.routes.js"></script>
+<script src="scripts/app/app.controllers.js"></script>
+<script src="scripts/app/app.constants.js"></script>
+<script src="scripts/app/app.config.js"></script>
+<!-- endinject -->
+
+<!-- inject:partials -->
+<!-- angular templates will be automatically converted in js and inserted here -->
+<!-- endinject -->
+<!-- endbuild -->
+
+</body>
+
+</html>

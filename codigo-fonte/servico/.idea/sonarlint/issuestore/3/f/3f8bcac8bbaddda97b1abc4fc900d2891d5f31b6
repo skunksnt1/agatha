@@ -1,0 +1,7 @@
+
+ˆ
+java:S1192"rDefine a constant instead of duplicating this literal "select new br.gov.mpog.gestaoriscos.modelo.Orgao(" 3 times.(Ä…¿¼
+w
+java:S1192"aDefine a constant instead of duplicating this literal "o.id, o.nome, o.sigla, c, n, pai" 3 times.(êÍõ“
+¿
+java:S1192"¨Define a constant instead of duplicating this literal ") from Orgao o INNER JOIN o.categoriaUnidade c LEFT JOIN o.naturezaJuridica n LEFT JOIN o.orgaoPai pai " 3 times.(ªÔðç
