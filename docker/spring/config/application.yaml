@@ -5,14 +5,14 @@ ecidadao:
 # Solicite seu client-id e client-secret via email riscos@economia.gov.br enviando o 
 # plano de configuração disponivel em https://softwarepublico.gov.br/social/agatha/manuais-de-usuario/plano-de-configuracao
 #
-  client-id: agatha.hmg.epl.gov.br
-  client-secret: AJfaMZxTfht57YT87bDWFNo9TOicuYFzxB7MtmiWxA3vVKEAc1gxeegVTkqJN3JhA7f4AK8phKm-i5Seo0FTyyo
-  pre-established-redirect-uri: http://agatha.hmg.epl.gov.br/gestaoriscos/api/login/openid
+  client-id: agatha-dev.ana.gov.br
+  client-secret: XAFQPmoRQIGt0Na2sDaoF9vy6tWjIgTcXIPh4-N9z818XGZwuM5TLzS-9t29iQF9RAR2fD_DJmUdGKFzisxvmw
+  pre-established-redirect-uri: https://agatha-dev.ana.gov.br/gestaoriscos/api/login/openid
   sistema:
-    dominio: agatha.hmg.epl.gov.br
+    dominio: agatha-dev.ana.gov.br
     url-pattern-protegido: /**
-    redireciona-login-sucesso: http://agatha.hmg.epl.gov.br
-    redireciona-logout-sucesso: http://agatha.hmg.epl.gov.br
+    redireciona-login-sucesso: https://agatha-dev.ana.gov.br
+    redireciona-logout-sucesso: https://agatha-dev.ana.gov.br
 
   # URIS dO AMBIENTE DE TESTES do Login Único
   access-token-uri: https://sso.staging.acesso.gov.br/token
